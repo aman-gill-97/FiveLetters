@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiveLetters.NewPage1"
+             Title="NewPage1">
+    <VerticalStackLayout>
+        <Label 
+            Text="Privacy Policy"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            BackgroundColor="#09b492"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="Large"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,150 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiveLetters.MainPage"
+             xmlns:viewmodel="clr-namespace:FiveLetters.ViewModel"
+             xmlns:model="clr-namespace:FiveLetters.Model"
+             xmlns:local="clr-namespace:FiveLetters.CustomRenders;assembly=Worzle"
+             x:DataType="viewmodel:GameViewModel"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <Grid RowDefinitions="auto,auto,auto,auto,auto"
+          Padding="8,12,8,12">
+        <VerticalStackLayout Padding="0,10,0,10" Grid.Row="0" VerticalOptions="CenterAndExpand">
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="50">
+                <ImageButton WidthRequest="30" HeightRequest="30" HorizontalOptions="Start" Source="Resources/Images/stats.png"
+                              Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}},Path=OpenSettingsCommand}"/>
+                <HorizontalStackLayout Spacing="2">
+                    <Label Text="LEVEL" TextColor="Black" FontSize="Medium"/>
+                    <Label Text="{Binding UserStats.Level}" TextColor="Black" FontSize="Medium"/>
+                </HorizontalStackLayout>
+
+                <ImageButton WidthRequest="30" HeightRequest="30" HorizontalOptions="End" Source="Resources/Images/needhelp.png" 
+                             Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}},Path=OpenHelpPageCommand}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <!--Game field-->
+        <VerticalStackLayout
+            Spacing="8"
+            BindableLayout.ItemsSource="{Binding Rows}" Padding="0,10,0,10" VerticalOptions="CenterAndExpand" Grid.Row="1">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="model:WordRow">
+                    <HorizontalStackLayout 
+                        Spacing="10"
+                        HorizontalOptions="Center"
+                        BindableLayout.ItemsSource="{Binding Letters}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="model:Letter">
+                                <Frame Style="{DynamicResource LetterFrame}"
+                                        BackgroundColor="{Binding Color}" BorderColor="{Binding BorderColor}">
+                                    <Label Text="{Binding Input}"
+                                           FontSize="Medium"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" TextColor="{Binding LetterTextColor}" FontAttributes="Bold"/>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="2" Padding="0,10,0,10" VerticalOptions="Center">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="{Binding GuessButtonText}" Background="#09b492" HeightRequest="60" WidthRequest="200" TextColor="White" CornerRadius="50" FontSize="Large"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}},Path=EnterLetterCommand}"
+                        CommandParameter="{Binding GuessCharacter}" IsEnabled="{Binding IsGuessEnabled}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="3" Padding="0,10,0,10" Spacing="4" VerticalOptions="Center">
+
+            <HorizontalStackLayout 
+                        Spacing="2"
+                        HorizontalOptions="Center"
+                        BindableLayout.ItemsSource="{Binding KeyboardList1}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:Key">
+                        <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyCharacter}" BackgroundColor="{Binding KeyBgColor}"  TextColor="{Binding KeyTextColor}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout 
+                        Spacing="2"
+                        HorizontalOptions="Center"
+                        BindableLayout.ItemsSource="{Binding KeyboardList2}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:Key">
+                        <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyCharacter}" BackgroundColor="{Binding KeyBgColor}" TextColor="{Binding KeyTextColor}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Spacing="2"
+                        HorizontalOptions="Center">
+                <HorizontalStackLayout 
+                        Spacing="2"
+                        HorizontalOptions="Center"
+                        BindableLayout.ItemsSource="{Binding KeyboardList3}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:Key">
+                            <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyCharacter}" BackgroundColor="{Binding KeyBgColor}" TextColor="{Binding KeyTextColor}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+                <ImageButton Style="{DynamicResource ImageButton}"
+                                 Source="backspace.png"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding DeleteCharacter}"  BackgroundColor="#d4d5d7" HorizontalOptions="EndAndExpand"/>
+            </HorizontalStackLayout>
+
+            <!--<HorizontalStackLayout 
+                        Spacing="2"
+                        HorizontalOptions="Center"
+                        >
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[0].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[0].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[0].KeyBgColor}" TextColor="{Binding KeyboardList3[0].KeyTextColor}"/>
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[1].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[1].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[1].KeyBgColor}" TextColor="{Binding KeyboardList3[1].KeyTextColor}"/>
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[2].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[2].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[2].KeyBgColor}" TextColor="{Binding KeyboardList3[2].KeyTextColor}"/>
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[3].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[3].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[3].KeyBgColor}" TextColor="{Binding KeyboardList3[3].KeyTextColor}"/>
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[4].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[4].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[4].KeyBgColor}" TextColor="{Binding KeyboardList3[4].KeyTextColor}"/>
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[5].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[5].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[5].KeyBgColor}" TextColor="{Binding KeyboardList3[5].KeyTextColor}"/>
+                <Button Style="{DynamicResource LetterButton}"
+                                Text="{Binding KeyboardList3[6].KeyCharacter}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
+                                CommandParameter="{Binding KeyboardList3[6].KeyCharacter}" BackgroundColor="{Binding KeyboardList3[6].KeyBgColor}" TextColor="{Binding KeyboardList3[6].KeyTextColor}"/>
+            </HorizontalStackLayout>-->
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="4" >
+            <local:AdBanner Size="Standardbanner" VerticalOptions="EndAndExpand"/>
+
+        </VerticalStackLayout>
+        <!--Keyboard-->
+    </Grid>
+</ContentPage>

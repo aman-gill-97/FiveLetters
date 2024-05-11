@@ -1,0 +1,51 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FiveLetters"
+             x:Class="FiveLetters.App"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="PrimaryColor">White</Color>
+            <Color x:Key="SecondaryColor">Black</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource SecondaryColor}, Dark={DynamicResource PrimaryColor}}" />
+                <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Dark='White', Light='Black'}"></Setter>-->
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+            </Style>
+
+            <Style x:Key="LetterFrame" TargetType="Frame">
+                <Setter Property="Padding" Value="14,14" />
+                <Setter Property="WidthRequest" Value="60"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Dark='Black', Light='White'}"></Setter>-->
+            </Style>
+
+            <Style x:Key="LetterButton" TargetType="Button">
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="BorderColor" Value="Lightgray"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="WidthRequest" Value="35"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <!--<Setter Property="TextColor" Value="{AppThemeBinding Dark='White', Light='Black'}"></Setter>-->
+                <!--<Setter Property="Background" Value="{AppThemeBinding Dark='Black', Light='Lightgray'}"></Setter>-->
+            </Style>
+
+            <Style x:Key="ImageButton" TargetType="ImageButton">
+                <Setter Property="BorderColor" Value="LightGray"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="WidthRequest" Value="60"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

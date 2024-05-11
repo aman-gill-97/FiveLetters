@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="FiveLetters.SettingsPopup"
+               xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+               xmlns:viewmodel="clr-namespace:FiveLetters.ViewModel"
+               x:DataType="viewmodel:UserStatsViewModel">
+
+    <Grid Padding="0" Margin="0" WidthRequest="300" HeightRequest="400">
+        <VerticalStackLayout>
+            <Label
+                    Text="Settings"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{DynamicResource PrimaryColor}"
+                    BackgroundColor="#09b492"
+                    FontSize="Large" FontAttributes="Bold"
+                    Padding="10">
+            </Label>
+            <HorizontalStackLayout>
+                <Label Text="Letters in Word" TextColor="Black" 
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       Margin="5"></Label>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout >
+                <Frame BackgroundColor="AliceBlue"
+                       WidthRequest="40"
+                       HeightRequest="40"
+                       Margin="5">
+                    <Label TextColor="Black" Text="4" FontSize="Large" FontAttributes="Bold"></Label>
+                </Frame>
+                <Frame BackgroundColor="AliceBlue"
+                       WidthRequest="40"
+                       HeightRequest="40"
+                       Margin="5">
+                    <Label TextColor="Black" HorizontalOptions="Center"
+                                           VerticalOptions="Center" Text="4" FontSize="Large" FontAttributes="Bold"></Label>
+                </Frame>
+            </HorizontalStackLayout>
+
+            <Grid VerticalOptions="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Dark Mode">
+                </Label>
+                <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" x:Name="darkMode"/>
+            </Grid>
+
+            <BoxView HeightRequest="1" Margin="5" Color="#FFFFFF" IsVisible="true"/>
+
+            <Grid VerticalOptions="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Color Blink Mode">
+                </Label>
+                <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" x:Name="ColorBlinkMode"/>
+            </Grid>
+
+            <BoxView HeightRequest="1" Margin="5" Color="#FFFFFF" IsVisible="true"/>
+
+            <Grid VerticalOptions="Center" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Label VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Notifications">
+                </Label>
+                <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" x:Name="notifications"/>
+            </Grid>
+
+            <BoxView HeightRequest="1" Margin="5" Color="#FFFFFF" IsVisible="true"/>
+
+            <HorizontalStackLayout>
+                <ImageButton WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" Source="Resources/Images/settings.png"/>
+                <ImageButton WidthRequest="40" HeightRequest="40" HorizontalOptions="End" Source="Resources/Images/coin.png" />
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+    </Grid>
+    
+
+
+</toolkit:Popup>
+
