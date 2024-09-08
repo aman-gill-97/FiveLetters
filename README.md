@@ -16,6 +16,10 @@ The primary goal of the **Five Letters** project is to create an intuitive, fun,
 
 <div style="display: flex; align-items: center;"> <div style="flex: 1;"> <h3>Instructions:</h3> <ol> <li>You have 6 tries to guess the WORD.</li> <li>Enter a valid 5-letter word and press the "Guess" button to check your guess.</li> <li>The color of the tiles will change to show how close you are to guessing the correct word: <ul> <li><strong>Green</strong>: The letter is in the correct position.</li> <li><strong>Yellow</strong>: The letter is in the word but in the wrong position.</li> <li><strong>Gray</strong>: The letter is not in the word.</li> </ul> </li> </ol> </div> <div style="flex: 1; text-align: center;"> <img src="./report/assets/1.jpg" alt="Screenshot of the Game" width="150" >  <img src="./report/assets/2.jpg" alt="Screenshot of the Game" width="150" >  <img src="./report/assets/4.jpg" alt="Screenshot of the Game" width="150" > <img src="./report/assets/5.jpg" alt="Screenshot of the Game" width="150" > <img src="./report/assets/6.jpg" alt="Screenshot of the Game" width="150" ></div> </div>
 
+## Game Flow (DFD)
+
+<img src="./report/assets/dfd.svg" alt="Screenshot of the Game" width="200" >  
+
 ## Technology Used
 
 The **Five Letters** project utilizes the following technologies:
