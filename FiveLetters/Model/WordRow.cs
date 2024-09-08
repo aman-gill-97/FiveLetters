@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using FiveLetters.Services;
-using System.Collections.Generic;
+
 
 namespace FiveLetters.Model;
 
@@ -43,4 +42,5 @@ public partial class Letter : ObservableObject
 
     [ObservableProperty]
     private Color borderColor;
+
 }
