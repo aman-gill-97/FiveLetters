@@ -351,7 +351,7 @@ public partial class GameViewModel : ObservableObject
     [ICommand]
     public void OpenSettings()
     {
-        App.Current.MainPage.ShowPopupAsync(new UserStatsPopup(new UserStatsViewModel(UserStats)));
+        //App.Current.MainPage.ShowPopupAsync();
         //App.Current.MainPage.ShowPopupAsync(new SettingsView(new SettingsViewModel()));
     }
 
