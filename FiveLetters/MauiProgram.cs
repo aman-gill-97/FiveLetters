@@ -3,12 +3,10 @@ using Android.OS;
 using CommunityToolkit.Maui;
 using FiveLetters.CustomRenders;
 using FiveLetters.Helpers;
-using FiveLetters.Platforms.Android;
 using FiveLetters.Services;
 using FiveLetters.ViewModel;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Microsoft.Maui.LifecycleEvents;
-using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace FiveLetters;
 public static class MauiProgram
@@ -18,13 +16,10 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder.UseMauiApp<App>().UseMauiCompatibility().ConfigureMauiHandlers(handlers =>
         {
-#if __ANDROID__
-            handlers.AddCompatibilityRenderer(typeof(AdBanner), typeof(AdBanner_Droid));
-#endif
         }).ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-        }).UseMauiCommunityToolkit().UseSkiaSharp(true);
+        }).UseMauiCommunityToolkit();
 
 
         builder.Services.AddScoped<WordService>();

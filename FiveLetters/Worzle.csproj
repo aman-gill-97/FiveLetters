@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;</TargetFrameworks>
 		<!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>--><!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>-->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>Worzle</RootNamespace>
@@ -11,10 +11,10 @@
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<!-- Display name -->
-		<ApplicationTitle>Worzle</ApplicationTitle>
+		<ApplicationTitle>five letters</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.ascendancyhub.worzle</ApplicationId>
+		<ApplicationId>com.amangill.fiveletters</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationVersion>5</ApplicationVersion>
@@ -52,9 +52,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Images\broom.png" />
 	  <None Remove="Resources\Images\coin.png" />
 	  <None Remove="Resources\Images\lightbulb.png" />
@@ -71,7 +68,6 @@
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview1" />
-	  <PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-beta.361" />
 	  <PackageReference Include="Microcharts" Version="0.9.5.9" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
@@ -131,5 +127,19 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
 	  <ApplicationDisplayVersion>1.0.5</ApplicationDisplayVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <ApplicationId>com.amangill.fiveletters</ApplicationId>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	  <ApplicationId>com.amangill.fiveletters</ApplicationId>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	</PropertyGroup>
 </Project>

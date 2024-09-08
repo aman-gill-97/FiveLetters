@@ -17,8 +17,8 @@
 
             <Style x:Key="LetterFrame" TargetType="Frame">
                 <Setter Property="Padding" Value="14,14" />
-                <Setter Property="WidthRequest" Value="60"/>
-                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="CornerRadius" Value="10"/>
                 <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Dark='Black', Light='White'}"></Setter>-->
             </Style>
@@ -28,8 +28,8 @@
                 <Setter Property="BorderColor" Value="Lightgray"/>
                 <Setter Property="BorderWidth" Value="2"/>
                 <Setter Property="CornerRadius" Value="5"/>
-                <Setter Property="WidthRequest" Value="35"/>
-                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="30"/>
+                <Setter Property="HeightRequest" Value="45"/>
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -42,7 +42,7 @@
                 <Setter Property="BorderWidth" Value="2"/>
                 <Setter Property="CornerRadius" Value="5"/>
                 <Setter Property="WidthRequest" Value="60"/>
-                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="HeightRequest" Value="45"/>
                 <Setter Property="Padding" Value="0" />
             </Style>
 

@@ -4,9 +4,8 @@ using FiveLetters.ViewModel;
 
 public partial class UserStatsPopup : Popup
 {
-	public UserStatsPopup(UserStatsViewModel viewModel)
+	public UserStatsPopup()
 	{
-		InitializeComponent();
-		BindingContext = viewModel;
+		//InitializeComponent();
 	}
 }

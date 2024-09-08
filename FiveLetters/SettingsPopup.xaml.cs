@@ -6,9 +6,8 @@ namespace FiveLetters;
 public partial class SettingsPopup : Popup
 {
 
-    public SettingsPopup(UserStatsViewModel viewModel)
+    public SettingsPopup()
     {
         InitializeComponent();
-        BindingContext = viewModel;
     }
 }
