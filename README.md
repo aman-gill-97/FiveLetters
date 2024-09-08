@@ -6,11 +6,26 @@ The **Five Letters** project is a cross-platform word puzzle game that challenge
 Built using **.NET MAUI**, this project demonstrates the potential of modern cross-platform app development tools, providing a consistent and polished user experience across multiple operating systems.
 
 ## Download
-- [Project Report](/report/Project-Report-322101415.pdf)
-- [APK File](/apk/com.amangill.fiveletters.apk)
+- [Project Report](https://github.com/aman-gill-97/FiveLetters/raw/main/report/Project-Report-322101415.pdf)
+- [APK File](https://github.com/aman-gill-97/FiveLetters/raw/main/apk/com.amangill.fiveletters.apk)
 
 ## Aim of the Project
 The primary goal of the **Five Letters** project is to create an intuitive, fun, and intellectually stimulating mobile game that combines entertainment with educational value. By offering players an opportunity to enhance their language and problem-solving skills, the app promotes strategic thinking and cognitive development.
+
+## How to play Fiveletters
+
+<div style="display: flex; align-items: center;"> <div style="flex: 1;"> <h3>Instructions:</h3> <ol> <li>You have 6 tries to guess the WORD.</li> <li>Enter a valid 5-letter word and press the "Guess" button to check your guess.</li> <li>The color of the tiles will change to show how close you are to guessing the correct word: <ul> <li><strong>Green</strong>: The letter is in the correct position.</li> <li><strong>Yellow</strong>: The letter is in the word but in the wrong position.</li> <li><strong>Gray</strong>: The letter is not in the word.</li> </ul> </li> </ol> </div> <div style="flex: 1; text-align: center;"> <img src="./report/assets/5.jpg" alt="Screenshot of the Game" width="150" > </div> </div>
+
+## Technology Used
+
+The **Five Letters** project utilizes the following technologies:
+
+- **.NET MAUI**: A cross-platform framework for building mobile apps, ensuring compatibility across both iOS and Android platforms.
+- **C#**: The primary programming language used for application logic.
+- **XAML**: Used for designing the user interface, providing a clean and maintainable separation of UI and business logic.
+- **Git & GitHub**: Version control and repository hosting for collaborative development.
+- **Visual Studio**: The integrated development environment (IDE) used for building and debugging the application.
+
 
 ## Key Features
 - **Cross-Platform**: Developed using .NET MAUI for seamless functionality across iOS and Android.
@@ -38,6 +53,14 @@ While the current version focuses on delivering a minimum viable product (MVP), 
 - Additional word sets and difficulty levels.
 - Multiplayer features for competing with friends.
 - Advanced analytics for tracking learning progress.
+
+## Publication on Linkedin
+- Title: Revolutionizing Word Games: A .NET MAUI Five Letters Project
+- Author: Amaninder Singh Gill
+- Platform: LinkedIn
+- URL: [Revolutionizing Word Games: A .NET MAUI Five Letters Project](https://www.linkedin.com/pulse/revolutionizing-word-games-net-maui-five-letters-project-singh-rrk7c?trackingId=kSUH6jCdTnCPiyh2xoQwLg%3D%3D&lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BxiPpg2epRya%2FxUORvCzX6w%3D%3D)
+- Status: Published
+
 
 ## Repository Structure
 ```
@@ -71,9 +94,3 @@ To get started with the **Five Letters** project:
 ## Contributions
 Contributions are welcome! If you have suggestions or bug reports, feel free to open an issue or submit a pull request.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-You can replace the placeholder URLs with the actual links. Let me know if this works for you!
